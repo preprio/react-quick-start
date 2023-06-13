@@ -1,6 +1,8 @@
 # react-quick-start
 The React quick start project launches a blog app with content from Prepr.
 
+[Stackblitz demo](https://stackblitz.com/edit/prepr-react-quick-start)
+
 ## Setup
 
 Make sure to install the dependencies:
