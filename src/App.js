@@ -1,3 +1,4 @@
+import React from "react";
 import {GetArticles} from "./queries/getArticles";
 import {useQuery} from "@apollo/client";
 import {Link} from "react-router-dom";
