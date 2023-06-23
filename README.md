@@ -32,7 +32,7 @@ In the .env file replace `<YOUR-ACCESS-TOKEN>` with the Prepr access token from 
 Start the development server on http://localhost:3000
 
 ```bash
-npm run dev
+npm start
 ```
 
 ## Production
@@ -41,12 +41,6 @@ Build the application for production:
 
 ```bash
 npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
 ```
 
 Check out the [deployment documentation](https://create-react-app.dev/docs/deployment/) for more information.
