@@ -1,5 +1,5 @@
 import React from "react";
-import {GetArticles} from "./queries/getArticles";
+import {GetArticles} from "./queries/get-articles";
 import {useQuery} from "@apollo/client";
 import {Link} from "react-router-dom";
 function App() {

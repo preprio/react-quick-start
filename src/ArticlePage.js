@@ -1,6 +1,6 @@
 import React from "react";
 import {useQuery} from "@apollo/client";
-import {GetArticleBySlug} from "./queries/getArticleBySlug";
+import {GetArticleBySlug} from "./queries/get-article-by-slug";
 import {useParams} from "react-router-dom";
 
 export default function ArticlePage() {
