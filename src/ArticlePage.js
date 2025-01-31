@@ -32,19 +32,20 @@ export default function ArticlePage() {
                 src={contentType.items[0]?.url}
                 width="300"
                 height="250"
-                alt={`Image for ${article.title}`}
+                alt={article.title}
               />
             </div>
-          )
+          );
         }
 
         //Display text as HTML
-
         if (contentType.__typename === 'Text') {
           return (
-            <div dangerouslySetInnerHTML={{ __html: contentType.body }}></div>
-          )
+            <div key={contentType.body} dangerouslySetInnerHTML={{__html: contentType.body}}></div>
+          );
         }
+
+        return null;
       })}
     </>
   )
