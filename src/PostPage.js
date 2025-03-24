@@ -1,28 +1,28 @@
 import React from "react";
 import {useQuery} from "@apollo/client";
-import {GetArticleBySlug} from "./queries/get-article-by-slug";
+import {GetPostBySlug} from "./queries/get-post-by-slug";
 import {useParams} from "react-router-dom";
 
-export default function ArticlePage() {
+export default function PostPage() {
   const {slug} = useParams();
-  const {loading, error, data} = useQuery(GetArticleBySlug, {
+  const {loading, error, data} = useQuery(GetPostBySlug, {
     variables: {slug}
   });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  const article = data.Article;
+  const post = data.Post;
 
   return (
     <>
       <h1>
-        { article.title }
+        { post.title }
       </h1>
 
       {/* Loop through content types in article content */}
 
-      {article.content.map((contentType) => {
+      {post.content.map((contentType) => {
 
         //Display image if it exists
         if (contentType.__typename === 'Assets' && contentType.items.length) {
@@ -32,7 +32,7 @@ export default function ArticlePage() {
                 src={contentType.items[0]?.url}
                 width="300"
                 height="250"
-                alt={article.title}
+                alt={post.title}
               />
             </div>
           );

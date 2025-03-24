@@ -1,24 +1,24 @@
 import React from "react";
-import {GetArticles} from "./queries/get-articles";
+import {GetPosts} from "./queries/get-posts";
 import {useQuery} from "@apollo/client";
 import {Link} from "react-router-dom";
 function App() {
-  const {loading, error, data} = useQuery(GetArticles);
+  const {loading, error, data} = useQuery(GetPosts);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  const articles = data.Articles.items;
+  const posts = data.Posts.items;
 
   return (
     <div>
       <h1>My blog site</h1>
       <ul>
-        {articles.map((article) => (
+        {posts.map((post) => (
 
-          //List the fetched articles
-          <li key={article._id}>
-            <Link to={article._slug}>{article.title}</Link>
+          //List the fetched posts
+          <li key={post._id}>
+            <Link to={post._slug}>{post.title}</Link>
           </li>
         ))}
       </ul>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import ArticlePage from "./ArticlePage";
+import PostPage from "./PostPage";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {ApolloProvider} from "@apollo/client";
 import client from "./services/apollo-client";
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/:slug",
-    element: <ArticlePage />,
+    element: <PostPage />,
   }
 ]);
 
