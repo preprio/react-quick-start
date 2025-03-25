@@ -15,38 +15,43 @@ export default function PostPage() {
   const post = data.Post;
 
   return (
-    <>
-      <h1>
-        { post.title }
-      </h1>
+      <>
+        <h1>
+          {post.title}
+        </h1>
 
-      {/* Loop through content types in article content */}
+        <div className="my-10">
+          <img
+              src={post.cover.url}
+              alt={post.title}
+          />
+        </div>
 
-      {post.content.map((contentType) => {
+        {/* Loop through content types in article content */}
 
-        //Display image if it exists
-        if (contentType.__typename === 'Assets' && contentType.items.length) {
-          return (
-            <div className="my-10">
-              <img
-                src={contentType.items[0]?.url}
-                width="300"
-                height="250"
-                alt={post.title}
-              />
-            </div>
-          );
-        }
+        {post.content.map((contentType) => {
 
-        //Display text as HTML
-        if (contentType.__typename === 'Text') {
-          return (
-            <div key={contentType.body} dangerouslySetInnerHTML={{__html: contentType.body}}></div>
-          );
-        }
+          //Display image if it exists
+          if (contentType.__typename === 'Assets' && contentType.items.length) {
+            return (
+                <div className="my-10">
+                  <img
+                      src={contentType.items[0]?.url}
+                      alt={post.title}
+                  />
+                </div>
+            );
+          }
 
-        return null;
-      })}
-    </>
+          //Display text as HTML
+          if (contentType.__typename === 'Text') {
+            return (
+                <div key={contentType.body} dangerouslySetInnerHTML={{__html: contentType.body}}></div>
+            );
+          }
+
+          return null;
+        })}
+      </>
   )
 }
