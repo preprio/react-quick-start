@@ -36,6 +36,6 @@
     "@eslint/config-array": "^0.19.1",
     "@eslint/object-schema": "^2.1.5",
     "react-scripts": "^5.0.1",
-    "webpack": "^5.97.1"
+    "webpack": "^5.105.0"
   }
 }
